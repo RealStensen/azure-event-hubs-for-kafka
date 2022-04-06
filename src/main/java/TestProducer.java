@@ -20,6 +20,8 @@ public class TestProducer {
 
     public static void main(String... args) throws Exception {
         //Create Kafka Producer
+        System.out.println("Hello :)!!!!!!!!!!!!!!!!!!!!!!!!!!!1111!11!!1!!1!!!");
+
         final Producer<Long, String> producer = createProducer();
 
         Thread.sleep(5000);
@@ -29,6 +31,9 @@ public class TestProducer {
         //Run NUM_THREADS TestDataReporters
         for (int i = 0; i < NUM_THREADS; i++)
             executorService.execute(new TestDataReporter(producer, TOPIC));
+
+
+        System.out.println("BYE!!!!!1!1!!11!!!!");
     }
 
     /*
