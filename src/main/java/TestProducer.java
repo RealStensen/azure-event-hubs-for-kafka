@@ -44,10 +44,10 @@ sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule require
             Properties properties = new Properties();
             properties.load(new FileReader("src/main/resources/producer.config"));
 
-            properties.put("bootstrap.servers", System.getenv("BOOTSTRAP_SERVERS"))
-            properties.put("security.protocol", "SASL_SSL")
-            properties.put("sasl.mechanism", "PLAIN")
-            properties.put("sasl.jaas.config", System.getenv("SASL_JAAS_CONFIG"))
+            properties.put("bootstrap.servers", System.getenv("BOOTSTRAP_SERVERS"));
+            properties.put("security.protocol", "SASL_SSL");
+            properties.put("sasl.mechanism", "PLAIN");
+            properties.put("sasl.jaas.config", System.getenv("SASL_JAAS_CONFIG"));
 
             properties.put(ProducerConfig.CLIENT_ID_CONFIG, "KafkaExampleProducer");
             properties.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, LongSerializer.class.getName());
